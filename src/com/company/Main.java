@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Optional;
+import java.util.Scanner;
 import java.util.stream.Stream;
 
 public class Main {
@@ -13,7 +14,11 @@ public class Main {
 
         String fileName = "alunos.csv";
         String fileTemp = "updated_alunos.csv";
-        String mat = "106942";
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("Por favor, insira seu número de matrícula: ");
+
+        String mat = scan.nextLine();
         Optional<String[]> catcher = Optional.empty();
 
         //read file into stream, try-with-resources
