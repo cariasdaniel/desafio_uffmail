@@ -86,11 +86,11 @@ class GeradorSugestao {
 
     public String[] gerar(int n){
         String[] r = new String[n];
-        r[0] = nomes[0] + "_" + nomes[1];
-        r[1] = nomes[0] + nomes[1].charAt(0) + nomes[nomes.length - 1].charAt(0);
-        r[2] = nomes[0] + nomes[nomes.length - 1];
-        r[3] = nomes[0] + "." + nomes[nomes.length - 1];
-        r[4] = nomes[0].charAt(0) + nomes[1] + nomes[nomes.length - 1];
+        r[0] = nomes[0] + "_" + nomes[1] + "@id.uff.br";
+        r[1] = nomes[0] + nomes[1].charAt(0) + nomes[nomes.length - 1].charAt(0) + "@id.uff.br";
+        r[2] = nomes[0] + nomes[nomes.length - 1] + "@id.uff.br";
+        r[3] = nomes[0] + "." + nomes[nomes.length - 1] + "@id.uff.br";
+        r[4] = nomes[0].charAt(0) + nomes[1] + nomes[nomes.length - 1] + "@id.uff.br";
         return r;
     }
 }
