@@ -19,7 +19,6 @@ public class Main {
         System.out.println("Por favor, insira seu número de matrícula: ");
 
         String mat = scan.nextLine();
-        Optional<String[]> catcher = Optional.empty();
 
         //read file into stream, try-with-resources
         try (Stream<String> stream = Files.lines(Paths.get(fileName));
