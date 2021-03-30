@@ -1,5 +1,6 @@
 package com.company;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 class Aluno{
@@ -30,7 +31,25 @@ class Aluno{
         } else if (uffmail.isBlank()){
             System.out.println("Email não existe, vamos criar um novo :)");
             Scanner scan = new Scanner(System.in);
-            uffmail = scan.nextLine();
+
+            String[] nomes = nome.toLowerCase().split(" ");
+            //Numero de sugestões temporariamente fixo
+            String[] r = new String[5];
+            r[0] = nomes[0] + "_" + nomes[1] + "@id.uff.br";
+            r[1] = nomes[0] + nomes[1].charAt(0) + nomes[nomes.length - 1].charAt(0) + "@id.uff.br";
+            r[2] = nomes[0] + nomes[nomes.length - 1] + "@id.uff.br";
+            r[3] = nomes[0] + "." + nomes[nomes.length - 1] + "@id.uff.br";
+            r[4] = nomes[0].charAt(0) + nomes[1] + nomes[nomes.length - 1] + "@id.uff.br";
+
+            for (int i = 0; i < r.length; i++) {
+                System.out.println((i+1) + " - " + r[i]);
+            }
+
+            System.out.println("Das sugestões oferecidas, qual é a de sua preferência?");
+            int alt = scan.nextInt() - 1;
+            System.out.println("A criação de seu e-mail (" + r[alt] + ") será feita nos próximos minutos.");
+            System.out.println("Um SMS foi enviado para " + telefone + " com a sua senha de acesso.");
+
         } else {
             System.out.println("Você já tem um email cadastrado no sistema");
         }
@@ -40,6 +59,7 @@ class Aluno{
         this.procederCadastroUffmail();
         return this;
     }
+
     public boolean checaMatricula(String mat) {
         return matricula.equals(mat);
     }
@@ -47,5 +67,30 @@ class Aluno{
     @Override
     public String toString(){
         return nome + "," + matricula + "," + telefone + "," + email + "," + uffmail + "," + status;
+    }
+}
+
+class GeradorSugestao {
+    private int n_nomes;
+    private String[] nomes;
+
+    public GeradorSugestao(int n, String[] nomes){
+        n_nomes = n;
+        this.nomes = nomes;
+    }
+
+    public GeradorSugestao(String nomes){
+        this.nomes = nomes.toLowerCase().split(" ");
+        n_nomes = this.nomes.length;
+    }
+
+    public String[] gerar(int n){
+        String[] r = new String[n];
+        r[0] = nomes[0] + "_" + nomes[1];
+        r[1] = nomes[0] + nomes[1].charAt(0) + nomes[nomes.length - 1].charAt(0);
+        r[2] = nomes[0] + nomes[nomes.length - 1];
+        r[3] = nomes[0] + "." + nomes[nomes.length - 1];
+        r[4] = nomes[0].charAt(0) + nomes[1] + nomes[nomes.length - 1];
+        return r;
     }
 }

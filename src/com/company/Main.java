@@ -16,7 +16,6 @@ public class Main {
         String mat = "106942";
         Optional<String[]> catcher = Optional.empty();
 
-        //read file into stream, try-with-resources
         try (Stream<String> stream = Files.lines(Paths.get(fileName));
              PrintWriter output = new PrintWriter(fileTemp, "UTF-8")) {
             //0: nome, 1: matricula, 2: telefone, 3: email, 4: uffmail, 5: status

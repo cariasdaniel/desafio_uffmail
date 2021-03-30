@@ -1,5 +1,4 @@
 nome,matricula,telefone,email,uffmail,status
-nome,matricula,telefone,email,uffmail,status
 Luiza Fernandes Ferreira,105794,99999-9950,email@gmail.com,uffmail@id.uff.br,Ativo
 Nicolas Sousa Cavalcanti,100172,99999-9951,email@gmail.com,uffmail@id.uff.br,Ativo
 Leonor Cardoso Ferreira,100484,99999-9952,email@gmail.com,,Inativo
@@ -29,5 +28,5 @@ Diego Martins Barbosa,100321,99999-9975,email@gmail.com,,Inativo
 Beatrice Lima Pinto,101200,99999-9976,email@gmail.com,,Inativo
 Davi Fernandes Alves,100943,99999-9977,email@gmail.com,uffmail@id.uff.br,Ativo
 Vitor Alves Rodrigues,106447,99999-9978,email@gmail.com,uffmail@id.uff.br,Inativo
-Andre Cunha Fernandes,106942,99999-9979,email@gmail.com,mailuf,Ativo
+Andre Cunha Fernandes,106942,99999-9979,email@gmail.com,,Ativo
 Lucas Oliveira Barros,100591,99999-9980,email@gmail.com,,Ativo
