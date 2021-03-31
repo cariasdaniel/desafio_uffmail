@@ -40,12 +40,21 @@ class Aluno{
             r[3] = nomes[0] + "." + nomes[nomes.length - 1] + "@id.uff.br";
             r[4] = nomes[0].charAt(0) + nomes[1] + nomes[nomes.length - 1] + "@id.uff.br";
 
-            for (int i = 0; i < r.length; i++) {
-                System.out.println((i+1) + " - " + r[i]);
-            }
+            int alt;
 
-            System.out.println("Das sugestões oferecidas, qual é a de sua preferência?");
-            int alt = scan.nextInt() - 1;
+            while(true){
+                for (int i = 0; i < r.length; i++) {
+                    System.out.println((i+1) + " - " + r[i]);
+                }
+
+                System.out.println("Das sugestões oferecidas, qual é a de sua preferência?");
+                alt = scan.nextInt() - 1;
+
+                if (alt < 0 || alt >= r.length)
+                    System.out.println("Por favor, insira uma das " + r.length + " opções válidas acima.");
+                else break;
+
+            }
             System.out.println("A criação de seu e-mail (" + r[alt] + ") será feita nos próximos minutos.");
             System.out.println("Um SMS foi enviado para " + telefone + " com a sua senha de acesso.");
 
