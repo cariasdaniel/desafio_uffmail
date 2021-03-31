@@ -32,13 +32,22 @@ class Aluno{
             System.out.println("Email não existe, vamos criar um novo :)");
 
             String[] r = new GeradorSugestao(nome).gerar(5);
+            int alt;
 
-            for (int i = 0; i < r.length; i++) {
-                System.out.println((i+1) + " - " + r[i]);
+            while(true){
+                for (int i = 0; i < r.length; i++) {
+                    System.out.println((i+1) + " - " + r[i]);
+                }
+
+                System.out.println("Das sugestões oferecidas, qual é a de sua preferência?");
+                alt = scan.nextInt() - 1;
+
+                if (alt < 0 || alt >= r.length)
+                    System.out.println("Por favor, insira uma das " + r.length + " opções válidas acima.");
+                else break;
+
             }
 
-            System.out.println("Das sugestões oferecidas, qual é a de sua preferência?");
-            int alt = scan.nextInt() - 1;
             System.out.println("A criação de seu e-mail (" + r[alt] + ") será feita nos próximos minutos.");
             System.out.println("Um SMS foi enviado para " + telefone + " com a sua senha de acesso.");
             uffmail = r[alt];
