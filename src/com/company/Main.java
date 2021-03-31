@@ -22,7 +22,7 @@ public class Main {
 
         //read file into stream, try-with-resources
         try (Stream<String> stream = Files.lines(Paths.get(fileName));
-             PrintWriter output = new PrintWriter(fileTemp, "StandardCharsets.UTF_8")) {
+             PrintWriter output = new PrintWriter(fileTemp, "UTF-8")) {
             //0: nome, 1: matricula, 2: telefone, 3: email, 4: uffmail, 5: status
 
             stream.map(e -> {
